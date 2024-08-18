@@ -1,0 +1,33 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+ 
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#sidebar-nav {
+    width: 160px;
+}
+
+.goright{
+    float:right;
+    margin-left: 75vw;
+}
+

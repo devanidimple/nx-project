@@ -1,0 +1,78 @@
+<!-- /#wrapper -->
+
+<!-- <div class="d-flex">
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">Menu</div>
+    <div class="list-group list-group-flush">
+      <button
+        *ngFor="let item of otherMenus"
+        (click)="navigateToChild(item.link)"
+      >
+        {{ item.name }}
+      </button>
+    </div>
+  </div> -->
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Active Menu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link menu</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled Menu</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-auto px-0">
+      <div id="sidebar" class="collapse collapse-horizontal show border-end">
+        <div
+          id="sidebar-nav"
+          class="list-group border-0 rounded-0 text-sm-start min-vh-100"
+        >
+          <a
+            *ngFor="let item of otherMenus"
+            (click)="navigateToChild(item.link)"
+            class="list-group-item border-end-0 d-inline-block text-truncate"
+            data-bs-parent="#sidebar"
+            ><i class="bi bi-bootstrap"></i> <span> {{ item.name }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <main class="col ps-md-2 pt-2">
+      <a
+        href="#"
+        data-bs-target="#sidebar"
+        data-bs-toggle="collapse"
+        class="border rounded-3 p-1 text-decoration-none"
+        ><i class="bi bi-list bi-lg py-2 p-1"></i>#</a
+      >
+
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <!-- <h1 class="mt-4">Main Content</h1>
+      <p>This is the main content area.</p> -->
+          <router-outlet />
+        </div>
+        <!-- </div> -->
+      </div>
+    </main>
+  </div>
+</div>
+<!-- <div id="page-content-wrapper">
+  <div class="container-fluid">
+    <h1 class="mt-4">Main Content</h1>
+      <p>This is the main content area.</p>
+    <router-outlet />
+  </div>
+  </div>
+</div> -->
+
+<!--Container Main end-->
