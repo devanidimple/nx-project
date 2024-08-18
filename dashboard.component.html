@@ -1,0 +1,30 @@
+<div class="container">
+  <h3>Click on cards to get data</h3>
+  <div class="card">
+    <button
+      class="card-body"
+      *ngFor="let item of cards"
+      [ngStyle]="{ background: item.color }"
+      (click)="clickCard(item.data)"
+    >
+      {{ item.name }}
+    </button>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th *ngFor="let col of currentCard?.table[0] | keyvalue">
+          {{ col.key }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterate over each object in the jsonData array -->
+      <tr *ngFor="let item of currentCard?.table">
+        <!-- Iterate over each key in the current object -->
+        <td *ngFor="let value of item | keyvalue">{{ value.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
